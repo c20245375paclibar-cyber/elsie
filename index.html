@@ -1,83 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
 </head>
+<body class="dark:bg-slate-900 bg-white text-slate-900 dark:text-white text-center">
 
-<body id="page-body" class="text-center bg-blue-200 transition-all duration-700">
+    <h1 id="main-title" class="text-blue-400 font-bold underline text-2xl sm:text-[50px] transition-all duration-500">
+        Elsie Paclibar
+    </h1>
 
-  <h1 id="main-title" class="text-blue-400 font-bold underline text-2xl sm:text-[50px] transition-all duration-500">
-    Elsie Paclibar
-  </h1>
+    <!-- Switch Button ni -->
+    <button id="switchdark" class="bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 px-4 py-2 border border-slate-700 dark:border-slate-300 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+        Switch
+    </button>
 
-  <!-- Switch Button ni -->
-  <button id="switch" class="bg-blue-900 text-blue-100 px-6 py-3 border border-blue-800 rounded-[10px] transition-all duration-500 hover:bg-emerald-500 hover:text-blue-950 font-medium cursor-pointer">
-    Switch
-  </button>
+    <!-- ari naman navigation header -->
+    <header class="mt-12">
+        <nav id="nav-bar" class="flex flex-col sm:flex-row justify-between items-center mx-[50px] gap-[15px] sm:gap-0 border-b border-blue-900 pb-4 transition-all duration-500">
+            <span id="nav-handle" class="text-blue-300 font-mono font-bold tracking-wider transition-all duration-500">@elss_sie</span>
+            <ul class="flex flex-col sm:flex-row gap-[20px] p-0 m-0 text-center text-sm font-medium">
+                <li><a href="#projects" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Projects</a></li>
+                <li><a href="#services" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Services</a></li>
+                <li><a href="#contact" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ari naman navigation header -->
-  <header class="mt-12">
-    <nav id="nav-bar" class="flex flex-col sm:flex-row justify-between items-center mx-[50px] gap-[15px] sm:gap-0 border-b border-blue-900 pb-4 transition-all duration-500">
-      <span id="nav-handle" class="text-blue-300 font-mono font-bold tracking-wider transition-all duration-500">@elss_sie</span>
-      <ul class="flex flex-col sm:flex-row gap-[20px] p-0 m-0 text-center text-sm font-medium">
-        <li><a href="#projects" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Projects</a></li>
-        <li><a href="#services" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Services</a></li>
-        <li><a href="#contact" class="nav-link transition-colors duration-300 ease-in-out text-blue-500 hover:text-emerald-600">Contact Me</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- main content ni-->
+    <main class="flex flex-col md:flex-row gap-[30px] p-[15px] sm:p-[50px] m-[10px] sm:m-[50px]">
+        <!-- Projects Section Box -->
+        <section id="projects" class="border border-gray-300 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 p-6 rounded-xl text-left shadow-xs transition-all duration-500">
+            <h2 class="text-xl font-bold mb-3 tracking-tight text-emerald-600 dark:text-green-300">My Projects</h2>
+            <p class="text-gray-600 dark:text-green-400 leading-relaxed text-sm">
+                Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+            </p>
+        </section>
 
-  <!-- main content ni-->
-  <main class="flex flex-col md:flex-row gap-[30px] p-[15px] sm:p-[50px] m-[10px] sm:m-[50px]">
-   
-    <!-- iya ni ka projects-->
-    <section id="projects" class="portfolio-card flex-1 min-w-0 border border-blue-800 p-[15px] sm:p-[20px] bg-blue-900 rounded-lg transition-all duration-500">
-      <h2 class="card-title text-xl font-bold text-green-100 mb-3 tracking-tight transition-all duration-500">My Projects</h2>
-      <p class="card-text text-green-400 leading-relaxed text-sm transition-all duration-500">Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.</p>
-    </section>
+        <!-- Services Section Box -->
+        <section id="services" class="border border-gray-300 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 p-6 rounded-xl text-left shadow-xs transition-all duration-500">
+            <h2 class="text-xl font-bold mb-3 tracking-tight text-emerald-600 dark:text-green-300">My Services</h2>
+            <p class="text-gray-600 dark:text-green-400 leading-relaxed text-sm">
+                Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems Analyst.
+            </p>
+        </section>
 
-    <!-- iya ka services -->
-    <section id="services" class="portfolio-card flex-1 min-w-0 border border-blue-800 p-[15px] sm:p-[20px] bg-blue-900 rounded-lg transition-all duration-500">
-      <h2 class="card-title text-xl font-bold text-green-100 mb-3 tracking-tight transition-all duration-500">My Services</h2>
-      <p class="card-text text-green-400 leading-relaxed text-sm transition-all duration-500">Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems Analyst</p>
-    </section>
+        <!-- Contact Section Box -->
+        <section id="contact" class="border border-gray-300 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 p-6 rounded-xl text-left shadow-xs transition-all duration-500">
+            <h2 class="text-xl font-bold mb-3 tracking-tight text-emerald-600 dark:text-green-300">Let's build together!</h2>
+            <form action="#" class="flex flex-col gap-4 mt-3">
+                <div class="flex flex-col gap-1.5">
+                    <label for="name" class="text-xs font-semibold text-gray-500 dark:text-gray-400">Name</label>
+                    <input type="text" id="name" name="name" required class="bg-white dark:bg-slate-950 border border-gray-300 dark:border-slate-800 p-2.5 rounded-lg text-sm text-slate-900 dark:text-white transition-colors focus:outline-emerald-500">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="email" class="text-xs font-semibold text-gray-500 dark:text-gray-400">Email</label>
+                    <input type="email" name="email" id="email" required class="bg-white dark:bg-slate-950 border border-gray-300 dark:border-slate-800 p-2.5 rounded-lg text-sm text-slate-900 dark:text-white transition-colors focus:outline-emerald-500">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="message" class="text-xs font-semibold text-gray-500 dark:text-gray-400">Message</label>
+                    <textarea name="message" id="message" rows="4" required class="bg-white dark:bg-slate-950 border border-gray-300 dark:border-slate-800 p-2.5 rounded-lg text-sm text-slate-900 dark:text-white transition-colors focus:outline-emerald-500 resize-vertical"></textarea>
+                </div>
+                <button id="submit-btn" type="submit" class="bg-emerald-600 dark:bg-emerald-500 hover:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-bold py-2.5 px-6 rounded-lg text-sm transition-all duration-300 hover:shadow-md cursor-pointer">
+                    Send Message
+                </button>
+            </form>
+        </section>
+    </main>
 
-    <!-- iya ka section -->
-    <section id="contact" class="portfolio-card flex-1 min-w-0 border border-blue-800 p-[15px] sm:p-[20px] bg-blue-900 rounded-lg transition-all duration-500">
-      <h2 class="card-title text-xl font-bold text-green-100 mb-4 tracking-tight transition-all duration-500">Let's build together!</h2>
-      <form action="#" class="flex flex-col gap-[20px]">
-       
-        <!-- mag fill ka sa name-->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="name" class="input-label text-xs font-semibold text-green-400 transition-all duration-500">Name</label>
-          <input type="text" id="name" name="name" required
-            class="bg-zinc-950 border border-zinc-800 p-2.5 rounded-lg text-zinc-100 transition-colors">
-        </div>
-
-        <!-- mag fill ka sa email -->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="email" class="input-label text-xs font-semibold text-green-400 transition-all duration-500">Email</label>
-          <input type="email" name="email" id="email" required
-            class="bg-zinc-950 border border-zinc-800 p-2.5 rounded-lg text-zinc-100 transition-colors">
-        </div>
-
-        <!-- amg fill ka message-->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="message" class="input-label text-xs font-semibold text-green-400 transition-all duration-500">Message</label>
-          <textarea name="message" id="message" rows="5" required
-            class="bg-zinc-950 border border-zinc-800 p-2.5 rounded-lg text-zinc-100 transition-colors"></textarea>
-        </div>
-
-        <!-- mag submit ka -->
-        <button id="submit-btn" type="submit" class="bg-emerald-500 text-green-950 font-bold py-3 px-6 rounded-lg transition-all duration-500 hover:bg-blue-300 hover:text-black cursor-pointer">
-          Send Message
-        </button>
-      </form>
-    </section>
-  </main>
+    <!-- Script para sa light and dark Mode Switcher -->
+    <script>
+        const switchButton = document.querySelector("#switchdark");
+        const html = document.querySelector("html");
+        
+        switchButton.addEventListener("click", function() {
+            html.classList.toggle("dark");
+        });
+    </script>
 </body>
 </html>
-
