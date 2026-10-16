@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -8,132 +9,279 @@
   <style type="text/tailwindcss">
     @variant dark (&:where(.dark, .dark *));
     @layer components {
-      .glass-container {
-        @apply backdrop-blur-md bg-blue-50/40 dark:bg-blue-950/40 border border-blue-200/30 dark:border-blue-800/40 rounded-2xl shadow-xl transition-all duration-500;
+      .clay-card {
+        @apply rounded-3xl bg-red-100 dark:bg-slate-900
+        border-4 border-white/60 dark:border-slate-700/50
+        duration-150;
+        box-shadow:
+          12px 12px 24px rgba(165, 28, 48, 0.25),
+          -8px -8px 20px rgba(255, 255, 255, 0.8),
+          inset 4px 4px 8px rgba(255, 255, 255, 0.6),
+          inset -4px -4px 8px rgba(165, 28, 48, 0.15);
       }
-      .text-main {
-        @apply text-amber-600 dark:text-yellow-400;
-      }
-      .btn-secondary {
-        @apply px-6 py-2.5 bg-amber-500 dark:bg-yellow-500 text-slate-950 font-semibold rounded-xl hover:bg-amber-600 dark:hover:bg-yellow-400 transition-all duration-300 shadow-md cursor-pointer active:scale-95;
-      }
-      .btn-neutral-outline {
-        @apply px-6 py-2.5 border border-amber-300 dark:border-yellow-600 text-amber-700 dark:text-yellow-400 font-semibold rounded-xl hover:bg-amber-50 dark:hover:bg-yellow-950/30 transition-all duration-300 backdrop-blur-xs cursor-pointer active:scale-95;
+      .dark .clay-card {
+        box-shadow:
+          10px 10px 22px rgba(0, 0, 0, 0.6),
+          -6px -6px 16px rgba(51, 65, 85, 0.3),
+          inset 3px 3px 6px rgba(255, 255, 255, 0.05),
+          inset -3px -3px 6px rgba(0, 0, 0, 0.5);
       }
       .btn-primary {
-        @apply px-6 py-2.5 bg-white dark:bg-slate-100 text-blue-900 font-bold rounded-xl hover:bg-blue-50 dark:hover:bg-white transition-all duration-300 shadow-lg cursor-pointer active:scale-95 border border-slate-200 dark:border-transparent;
+        @apply px-6 py-3 bg-red-600 dark:bg-red-500
+        text-white font-black tracking-wide rounded-2xl
+        duration-100 cursor-pointer active:scale-95
+        border-2 border-red-300/40;
+        box-shadow:
+          6px 6px 12px rgba(153, 27, 27, 0.4),
+          -4px -4px 10px rgba(239, 68, 68, 0.5),
+          inset 2px 2px 4px rgba(252, 165, 165, 0.5),
+          inset -2px -2px 4px rgba(127, 29, 29, 0.5);
       }
-      .accent-gold {
-        @apply text-white dark:text-slate-100 drop-shadow-sm;
+      .btn-primary:hover {
+        @apply bg-red-500 dark:bg-red-400;
       }
-      .border-accent-highlight {
-        @apply border-white/40 dark:border-slate-100/40;
+      .btn-secondary {
+        @apply px-6 py-3 bg-yellow-400 text-slate-950
+        font-black tracking-wide rounded-2xl duration-100
+        cursor-pointer active:scale-95
+        border-2 border-yellow-200/60;
+        box-shadow:
+          6px 6px 12px rgba(202, 138, 4, 0.3),
+          -4px -4px 10px rgba(250, 204, 21, 0.6),
+          inset 2px 2px 4px rgba(254, 240, 138, 0.8),
+          inset -2px -2px 4px rgba(161, 98, 7, 0.4);
       }
+      .btn-secondary:hover {
+        @apply bg-yellow-300;
+      }
+      .text-main {
+        @apply text-red-600 dark:text-yellow-400 font-extrabold;
+      }
+      .accent-badge {
+        @apply text-xs font-bold uppercase tracking-widest
+        text-white bg-red-500 dark:bg-yellow-400
+        dark:text-slate-950 px-3.5 py-1.5 rounded-full shadow-inner;
+      }
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
   </style>
 </head>
-<body class="dark:bg-blue-950 bg-blue-50 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-500 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent">
-  
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-blue-50/60 dark:bg-blue-950/60 border-b border-blue-200/30 dark:border-blue-900/50 transition-all duration-500">
-    <nav class="max-w-5xl mx-auto px-6 py-4 flex flex-row justify-between items-center">
-      <span class="font-serif font-bold tracking-widest text-lg text-main">
-        ELSIE'S <span class="accent-gold font-sans text-xs tracking-normal font-medium px-2 py-0.5 rounded bg-amber-500 dark:bg-yellow-500 text-slate-950 dark:text-slate-950 drop-shadow-none">JEWELRY</span>
+<body class="bg-red-50 dark:bg-slate-950 text-slate-900
+  dark:text-slate-100 min-h-screen flex flex-col
+  transition-colors duration-200 selection:bg-red-500
+  selection:text-white">
+  <header class="sticky top-0 z-50 w-full clay-card
+    rounded-none border-x-0 border-t-0 py-3 px-4">
+    <nav class="max-w-5xl mx-auto flex flex-wrap
+      justify-between items-center gap-4">
+      <span class="font-serif font-black tracking-widest
+        text-lg text-main flex items-center gap-2">
+        ELSIE'S
+        <span class="accent-badge text-[10px]">
+          JEWELRY ⚡
+        </span>
       </span>
-      <div class="flex items-center gap-6">
-        <ul class="flex gap-4 sm:gap-6 text-sm font-medium">
-          <li><a href="#hero" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Home</a></li>
-          <li><a href="#about" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">About</a></li>
-          <li><a href="#services" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Services</a></li>
-          <li><a href="#contact" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Contact</a></li>
+      <div class="flex items-center gap-4 sm:gap-6 flex-wrap">
+        <ul class="flex flex-wrap gap-3 sm:gap-6 text-sm font-bold">
+          <li>
+            <a href="#hero"
+              class="hover:text-red-500 dark:hover:text-yellow-400 transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about"
+              class="hover:text-red-500 dark:hover:text-yellow-400 transition-colors">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#services"
+              class="hover:text-red-500 dark:hover:text-yellow-400 transition-colors">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#contact"
+              class="hover:text-red-500 dark:hover:text-yellow-400 transition-colors">
+              Contact
+            </a>
+          </li>
         </ul>
-        <button id="toggledark" class="btn-primary text-xs py-1.5 px-3 rounded-lg cursor-pointer">Switch</button>
+        <button id="toggleDark"
+          type="button"
+          class="btn-primary text-xs py-1.5 px-3 rounded-xl">
+          Switch
+        </button>
+        <button id="timelineBtn"
+          type="button"
+          class="btn-secondary text-xs py-1.5 px-3 rounded-xl">
+         Replay Intro
+        </button>
+        <button id="flipBtn"
+          type="button"
+          class="btn-secondary text-xs py-1.5 px-3 rounded-xl">
+          Fit Services to Contact
+        </button>
       </div>
     </nav>
   </header>
-
-  <!-- Main Container -->
-  <main class="max-w-4xl mx-auto px-4 w-full py-12 space-y-12 flex-grow">
-    
+  <main class="max-w-4xl mx-auto px-4 w-full py-12
+    space-y-10 flex-grow">
     <!-- Hero Section -->
-    <section id="hero" class="glass-container p-8 sm:p-12 text-center space-y-4">
+    <section id="hero"
+      class="clay-card p-8 sm:p-12 text-center space-y-5">
       <div class="inline-block">
-        <span class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-yellow-400 bg-amber-500/10 dark:bg-yellow-400/10 px-3 py-1 rounded-full">
-          Handcrafted Elegance
-        </span>
+        <span id="heroBadge" class="accent-badge cursor-pointer">Handcrafted Elegance</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 dark:text-yellow-400">
+      <h1 class="text-3xl sm:text-5xl font-serif font-black
+        text-slate-900 dark:text-yellow-400 drop-shadow-xs">
         Elsie Paclibar
       </h1>
-      <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-        Welcome, my dearest customers. Explore our highly unique, one-of-a-kind handcrafted jewelry collections.
+      <p class="max-w-md mx-auto text-slate-700 dark:text-slate-300
+        text-sm sm:text-base font-medium leading-relaxed">
+        Welcome, my dearest customers. Explore our highly unique,
+        one-of-a-kind handcrafted jewelry collections built with
+        speed, polish, and passion.
       </p>
-      <div class="pt-2 flex justify-center gap-4">
-        <a href="#services" class="btn-primary">Our Services</a>
-        <a href="#contact" class="btn-secondary">Inquire Now</a>
+      <div class="pt-3 flex justify-center gap-4 flex-wrap">
+        <a href="#services" class="btn-primary">
+          Our Services
+        </a>
+        <a href="#contact" class="btn-secondary">
+          Inquire Now
+        </a>
       </div>
     </section>
-
     <!-- About Section -->
-    <section id="about" class="glass-container p-8 sm:p-12 text-center space-y-4">
+    <section id="about"
+      class="clay-card p-8 sm:p-12 text-center space-y-4">
       <div class="inline-block">
-        <span class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-yellow-400 bg-amber-500/10 dark:bg-yellow-400/10 px-3 py-1 rounded-full">
-          About
-        </span>
+        <span class="accent-badge">About Us</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-yellow-400 tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black
+        text-slate-900 dark:text-yellow-400 tracking-tight">
         Handmade with Love
       </h2>
-      <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-        It's made by hand. Every piece is crafted with love and care, ensuring that each item is unique and special. Our jewelry uses high-quality materials, including precious metals and gemstones, to create timeless pieces cherished for years to come.
+      <p class="max-w-md mx-auto text-slate-700 dark:text-slate-300
+        text-sm sm:text-base leading-relaxed">
+        It's made by hand. Every piece is crafted with love and care,
+        ensuring that each item is unique and special. Our jewelry
+        uses high-quality materials, including precious metals and
+        gemstones, to create timeless pieces cherished for years to come.
       </p>
     </section>
-
     <!-- Services Section -->
-    <section id="services" class="glass-container p-8 sm:p-12 text-center space-y-4">
+    <section id="services"
+      class="clay-card p-8 sm:p-12 text-center space-y-4">
       <div class="inline-block">
-        <span class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-yellow-400 bg-amber-500/10 dark:bg-yellow-400/10 px-3 py-1 rounded-full">
-          Services
-        </span>
+        <span class="accent-badge">Services</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-yellow-400 tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black
+        text-slate-900 dark:text-yellow-400 tracking-tight">
         What We Offer
       </h2>
-      <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-        We offer custom jewelry design, repairs, and appraisals. Our skilled artisans create one-of-a-kind pieces reflecting your personal style, alongside expert advice on jewelry care and maintenance.
+      <p class="max-w-md mx-auto text-slate-700 dark:text-slate-300
+        text-sm sm:text-base leading-relaxed">
+        We offer custom jewelry design, repairs, and appraisals.
+       
       </p>
     </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="glass-container p-8 sm:p-12 text-center space-y-4">
+    <section id="contact"
+      class="clay-card p-8 sm:p-12 text-center space-y-4">
       <div class="inline-block">
-        <span class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-yellow-400 bg-amber-500/10 dark:bg-yellow-400/10 px-3 py-1 rounded-full">
-          Contact
-        </span>
+        <span class="accent-badge">Contact</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-yellow-400 tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black
+        text-slate-900 dark:text-yellow-400 tracking-tight">
         Get in Touch
       </h2>
-      <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-        <a href="mailto:elsie's.jewelry@gmail.com" class="hover:underline text-amber-600 dark:text-yellow-400">elsie's.jewelry@gmail.com</a>
+      <p class="max-w-md mx-auto text-sm sm:text-base">
+        <a href="mailto:elsies.jewelry@gmail.com"
+          class="hover:underline font-bold text-red-600 dark:text-yellow-400">
+          elsies.jewelry@gmail.com
+        </a>
       </p>
     </section>
 
   </main>
-
   <!-- Footer -->
-  <footer class="w-full border-t border-blue-200/30 dark:border-blue-900/50 py-6 text-center text-xs text-slate-400 font-medium">
+  <footer class="w-full clay-card rounded-none
+    border-x-0 border-b-0 py-6 text-center text-xs
+    text-slate-600 dark:text-slate-400 font-bold">
     <p>&copy; 2026 Elsie's Jewelry Shop. All rights reserved.</p>
   </footer>
-
-     <!-- Script para sa light and dark Mode Switcher -->
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
+    <!-- Tween -->
     <script>
-        const toggleButton = document.querySelector("#toggledark");
-        const html = document.querySelector("html");
+      console.log("Gsap ver", gsap.version);
+      gsap.registerPlugin(Flip);
+      //tween
+        //gsap.to("h1",{x:200,duration:3});
+        //gsap.from("h1",{y:200,opacity:0,duration:1});
+        gsap.to("h1",{opacity:0,opacity:1,duration:1});
+        //easing
+        //gsap.from("h1",{y:-60,opacity:0,duration:1,ease:"power2.out"});
+        //gsap.from("h1",{y:-60,opacity:0,duration:1,ease:"back.out(2.5)"});
+        //gsap.from("h1",{y:-60,opacity:0,duration:1,ease:"bounce.out"});
+        //gsap.from("h1", { y: -60, opacity: 0, duration: 3, ease: "elastic.out(3,0.5)" });  
        
-        toggleButton.addEventListener("click", function() {
-            html.classList.toggle("dark");
-        });
-    </script>
+      
+        //stagger
+       gsap.from("nav a",{y:-100,opacity:0,duration:0.3,ease:"bounce.out",stagger:0.25})
+    // GSAP intro timeline
+    const tl = gsap.timeline({paused: true,defaults: { duration: 0.3, ease: "power2.out" }});
+
+    tl.from("nav a", {y: -20,duration: 0.3,stagger: 0.06});
+    tl.from("main > section", { y: -60,duration: 0.3, ease: "bounce.out",stagger: 0.1}, "-=0.2");
+    tl.from("main section .accent-badge", {y: -25,opacity: 0,duration: 0.3,ease: "bounce.out", stagger: 0.06}, "<");
+    tl.from("#hero h1", {y: -40,duration: 0.45,ease: "elastic.out(2, 0.5)"}, "<");
+    tl.from("#hero p", {y: 30,opacity: 0,duration: 0.45,ease: "bounce.out"}, "<");
+    tl.from("#hero .pt-3", {y: 35,opacity: 0,duration: 0.3,ease: "bounce.out"}, "-=0.25");
+    tl.from("#hero .pt-3 a", {scale: 0.85,opacity: 0,duration: 0.3,ease: "back.out(1.7)",stagger: 0.06 }, "-=0.3");
+    tl.from("#about h2, #about p", {y: 30,opacity: 0,duration: 0.3,ease: "bounce.out",stagger: 0.08 }, "-=0.4");
+    tl.from("#services h2, #services p, #contact h2, #contact p", {y: 30,opacity: 0,duration: 0.3,ease: "bounce.out",stagger: 0.06  }, "-=0.4");
+// Play the intro once on page load
+  window.addEventListener("load", function () {
+      tl.play(0);
+    });
+// Replay Intro button
+    const timelineBtn = document.querySelector("#timelineBtn");
+    timelineBtn.addEventListener("click", function () {
+      tl.restart();
+    });
+    const flipButton = document.querySelector("#flipBtn");
+    flipButton.addEventListener("click", function () {
+      Flip.fit("#services", "#contact", {
+        duration: 1,
+        ease: "power1.inOut",
+        onComplete: function () {
+          console.log("done!");
+        }
+      });
+    });
+    // Dark / Light mode switch
+    const toggleButton = document.querySelector("#toggleDark");
+    const html = document.documentElement;
+
+    toggleButton.addEventListener("click", function () {
+      // Switch between dark and light mode
+      html.classList.toggle("dark");
+      // Rotate the button once
+      gsap.to(toggleButton, {
+        rotation: "+=360",
+        duration: 0.4,
+        ease: "power2.out"
+      });
+    });
+  </script>
 </body>
 </html>
